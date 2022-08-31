@@ -1,8 +1,8 @@
+require("dotenv").config(); // this is important!
 const express = require('express');
 const figlet = require("figlet");
 const gradient = require("gradient-string");
 const app = express()
-
 app.use(express.json({ limit: "30mb" }));
 app.use(express.urlencoded({
     limit: "30mb",
