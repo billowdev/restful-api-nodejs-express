@@ -25,8 +25,17 @@ if (process.env.NODE_ENV === "development") {
 
 app.get('/', (req, res) => {
     res.json({ msg: "ok" })
-}
+ }
 )
+
+app.post('/:name', (req,res)=>{
+    let n = req.params.name;
+    res.json({data:n})
+})
+
+app.get('/', (req,res)=>{
+
+})
 
 const usersController = require("./users/users.controller");
 app.use('/users', usersController)
@@ -42,7 +51,7 @@ db.sequelize.sync().then(() => {
 const runningServe = async (log) => {
     console.log(`\n--- ${log} ---`);
 
-    const msg = `Akkarapon`
+    const msg = `AKKARAPON SERVE`
     figlet(msg, (err, data) => [
         console.log(gradient.pastel.multiline(data))
     ])

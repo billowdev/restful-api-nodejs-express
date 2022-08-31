@@ -33,3 +33,5 @@ router.delete("/:id", async(req, res)=>{
         res.status(400).json({success:false, msg:"delete user failure"});
     })
 })
+
+module.exports = router
