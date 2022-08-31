@@ -19,7 +19,6 @@
     "gradient-string": "^2.0.1",
     "morgan": "^1.10.0",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.21.4",
     "tedious": "^15.1.0"
   },
   "devDependencies": {
