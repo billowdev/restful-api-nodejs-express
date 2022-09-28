@@ -4,8 +4,13 @@ const { product, category } = productController;
 
 const findAllProduct = async (req, res) => {
     let data = await product.findAll({
+        attributes: ['product_name', 'price'],
         include: [
-            category
+            category,
+            {
+                model: category,
+                attributes: ['category_name']
+            }
         ]
     });
     res.json({
@@ -17,6 +22,14 @@ const findAllProduct = async (req, res) => {
 const findById = async(req, res)=>{
     let product_id = req.params.id
     let data = await product.findOne({
+        attributes: ['product_name', 'price'],
+        include: [
+            category,
+            {
+                model: category,
+                attributes: ['category_name']
+            }
+        ],
         where: {
             product_id
         }
