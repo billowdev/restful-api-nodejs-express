@@ -21,3 +21,13 @@ app.get('/api', (req, res) => {
 
         })
 })
+
+const product = require('./libs/product.lib')
+app.get('/api/product', (req, res) => {
+    product.findAllProduct(req, res)
+})
+
+app.get('/api/product/:id', (req, res) => {
+    
+    product.findById(req, res)
+})

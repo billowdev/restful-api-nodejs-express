@@ -14,6 +14,20 @@ const findAllProduct = async (req, res) => {
     })
 }
 
+const findById = async(req, res)=>{
+    let product_id = req.params.id
+    let data = await product.findOne({
+        where: {
+            product_id
+        }
+    })
+    res.json({
+        status: res.statusCode,
+        data
+    })
+}
+
 module.exports = {
-    findAllProduct
+    findAllProduct,
+    findById
 }

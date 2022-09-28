@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const { mysqlconf } = require('../config/config');
-const db = require('../models');
+// const db = require('../models');
 const sequelize = new Sequelize(
     mysqlconf.database,
     mysqlconf.username,
@@ -11,7 +11,7 @@ const sequelize = new Sequelize(
     }
 );
 
-db = {}
+let db = {}
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
